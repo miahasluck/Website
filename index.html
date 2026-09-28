@@ -41,7 +41,7 @@
             </span>
             <span class="intro-line intro-line--contact">
               if you&rsquo;d like to work together, please
-              <a href="#contact" class="link-contact">contact me!</a>
+              <a href="#contact" class="link-contact" id="contact-link">contact me!</a>
             </span>
           </p>
         </section>
@@ -52,11 +52,19 @@
         >
       </div>
       <div class="car-stage">
-        <img
-          class="car-roof-image"
-          src="images/car roof.JPG?v=cropped"
-          alt="Car roof reading Women on Top"
+        <a
+          class="car-roof-link"
+          href="https://i-d.co/article/your-july-2026-in-photos/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="i-D: Your July 2026 in photos"
         >
+          <img
+            class="car-roof-image"
+            src="images/car roof.JPG?v=cropped"
+            alt="Car roof reading Women on Top"
+          >
+        </a>
       </div>
       <img
         class="frame-image"
@@ -64,16 +72,23 @@
         alt="Pink picture frame"
       >
       <img
-        class="little-trees-image"
-        src="images/little trees.png"
-        alt="Little Trees air freshener"
-      >
-      <img
         class="bumper-sticker-image"
         src="images/bumper sticker.gif"
         alt="Baby on Board bumper sticker"
       >
     </main>
+    <div class="contact-overlay" id="contact-overlay" hidden>
+      <button
+        type="button"
+        class="contact-overlay-backdrop"
+        aria-label="Close contact"
+      ></button>
+      <img
+        class="contact-overlay-image"
+        src="images/contact%20me.jpg"
+        alt="Contact Mia Hasluck"
+      >
+    </div>
     <footer class="ticker" aria-label="Scrolling announcement">
       <div class="ticker-track">
         <p class="ticker-text">website design by mia hasluck ⋆.˚⟡ ࣪ ˖ live love laugh ⋆.˚⟡ ࣪ ˖ website design by mia hasluck ⋆.˚⟡ ࣪ ˖ let&rsquo;s work together ⋆.˚⟡ ࣪ ˖</p>
