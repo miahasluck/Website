@@ -57,8 +57,8 @@ body {
   overflow: hidden;
   background: linear-gradient(
     to top,
-    #50ffdf 0%,
-    #cafff5 24%,
+    #ff91c7 0%,
+    #ffe0ef 24%,
     #ffffff 50%,
     #ffffff 100%
   );
@@ -129,10 +129,33 @@ body {
   pointer-events: none;
 }
 
+.car-roof-link {
+  display: block;
+  pointer-events: auto;
+  cursor: none;
+}
+
 .car-roof-image {
   display: block;
   width: 100%;
   height: auto;
+  pointer-events: none;
+}
+
+.car-roof-cursor {
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: 72px;
+  pointer-events: none;
+  transform: translate(12px, 12px);
+  visibility: hidden;
+}
+
+.car-roof-cursor.is-active {
+  visibility: visible;
 }
 
 .frame-image {
@@ -150,16 +173,6 @@ body {
 .frame-image.is-dragging {
   z-index: 20;
   cursor: grabbing;
-}
-
-.little-trees-image {
-  position: absolute;
-  z-index: 1;
-  top: 0px;
-  right: -170px;
-  width: 700px;
-  height: auto;
-  pointer-events: none;
 }
 
 .bumper-sticker-image {
@@ -228,6 +241,51 @@ body {
   font-style: italic;
   line-height: var(--ticker-height);
   white-space: nowrap;
+}
+
+.contact-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.contact-overlay:not([hidden]) {
+  pointer-events: auto;
+}
+
+.contact-overlay-backdrop {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: default;
+}
+
+.contact-overlay-image {
+  position: relative;
+  z-index: 1;
+  max-width: 75vw;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  pointer-events: auto;
+  transform: scale(0.15);
+  opacity: 0;
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.35s ease;
+}
+
+.contact-overlay.is-visible .contact-overlay-image {
+  transform: scale(1);
+  opacity: 1;
 }
 
 @keyframes ticker-scroll {
